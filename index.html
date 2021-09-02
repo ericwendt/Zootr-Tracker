@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+    var inter;
+
+    function test_button()
+    {
+        inter = setInterval(function() { 
+            alert("hello");
+        }
+        , 3000);
+    }
+
+    function test_button2()
+    {
+        clearInterval(inter);
+    }
+
+</script>
+
+<style>
+
+    @keyframes title {
+        100% {background-color: crimson;}
+        50% {background-color: darkgreen;}
+        0% {background-color: crimson;}
+    }
+
+    #title {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        animation-name: title;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+
+</style>
+
 <title>ZOOTR Tracker</title>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h1 id="title">ZOOTR Tracker</h1>
+
+<div id="test"></div>
+<button onclick="test_button()">test</button>
+<button onclick="test_button2()">clear</button>
 
 </body>
 </html>
